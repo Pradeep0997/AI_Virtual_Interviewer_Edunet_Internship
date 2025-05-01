@@ -57,7 +57,7 @@ The goal is to simulate real-world interview experiences through a user-friendly
 ![Screenshot from 2025-05-01 23-50-15](https://github.com/user-attachments/assets/ea0aed72-a949-4322-af23-67e00f506d27)
 
 
-
+---
 
 ##💡 **Features**
 
@@ -77,10 +77,12 @@ The goal is to simulate real-world interview experiences through a user-friendly
 
 🔄 Easy deployment via Streamlit
 
-
+---
 
 
 🧪 **Sample Questions Used:**
+
+
 Tell me about yourself
 
 What are your strengths?
@@ -94,7 +96,7 @@ Tell me about a time you led a team
 (Add or modify questions in questions.json or questions.txt)
 
 
-
+---
 
 
 
@@ -104,7 +106,7 @@ Tell me about a time you led a team
 🌟 https://aivirtualintervieweredunetinternship-5rvkuhx86etuhtpfhqrpx4.streamlit.app/
 
 
-
+---
 
 ##📌 **Future Improvements:**
 
@@ -120,7 +122,7 @@ Tell me about a time you led a team
 
 🌐 Add resume-based question tailoring
 
-
+---
 
 
 ##🤝 Contributing
@@ -135,7 +137,7 @@ Contributions are welcome! Please fork the repository, make your changes, and su
 This project is licensed under the MIT License – see the LICENSE file for details.
 
 
-
+---
 
 
 ##📫 Contact
