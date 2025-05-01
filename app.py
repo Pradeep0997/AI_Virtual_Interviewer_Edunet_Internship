@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import random
@@ -7,7 +6,7 @@ import matplotlib.pyplot as plt
 # Page Configuration
 st.set_page_config(page_title="AI Virtual Interviewer", layout="centered")
 
-st.title("🤖 AI Virtual Interviewer")
+st.title(" AI Virtual Interviewer")
 st.write("Practice your interview skills by answering randomly selected questions. Get instant feedback based on your responses!")
 
 # Load questions from CSV
@@ -49,10 +48,13 @@ def generate_feedback(scores):
         feedback += "🔴 Needs improvement. Keep practicing!"
     return feedback
 
-# Main app logic
+# Load and store questions
 questions = load_questions()
 if questions:
-    selected_questions = select_random_questions(questions)
+    if "selected_questions" not in st.session_state:
+        st.session_state.selected_questions = select_random_questions(questions)
+
+    selected_questions = st.session_state.selected_questions
 
     st.subheader("📋 Answer the following questions:")
     answers = []
@@ -64,9 +66,13 @@ if questions:
         if '' in answers:
             st.warning("⚠️ Please answer all questions before submitting.")
         else:
-            scores = [random.randint(6, 10) for _ in selected_questions]  # Placeholder for real scoring
+            scores = [random.randint(6, 10) for _ in selected_questions]  # Placeholder scoring
             plot_results(selected_questions, scores)
             st.markdown("### 📄 Feedback")
             st.markdown(generate_feedback(scores))
+
+    if st.button("🔄 Restart Interview"):
+        st.session_state.clear()
+        st.experimental_rerun()
 else:
     st.warning("No questions loaded. Please check your CSV file.")
